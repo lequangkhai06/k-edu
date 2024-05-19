@@ -1,0 +1,27 @@
+# Error
+ErrorDocument 404 /views/error.php
+ErrorDocument 500 /views/error.php
+Options +FollowSymLinks
+Options All -Indexes
+ServerSignature Off
+RewriteEngine on
+# Auto ssl
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteRule ^logout$ handler/execute/auth.php?action=logout
+RewriteRule ^history/([a-zA-Z0-9_-]+)$ index.php?router=history&action=$1
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?router=$1
+RewriteRule ^payment/card$ views/user/payment-card.php
+RewriteRule ^payment/momo$ views/user/payment-momo.php
+RewriteRule ^payment/vnpay$ views/user/payment-vnpay.php
+RewriteRule ^payment/coins$ views/user/payment-coins.php
+#Danh Mục
+RewriteRule ^categories/([a-zA-Z0-9_-]+)$ views/categories.php?slug=$1
+RewriteRule ^course/([a-zA-Z0-9_-]+)$ views/course.php?slug=$1
+RewriteRule ^learning/([a-zA-Z0-9_-]+)$ views/learning.php?slug=$1
+#Xem Profile
+RewriteRule ^users/profile/([0-9]+)$ views/user/profile.php?id=$1
+#Đăng nhập MXH
+RewriteRule ^login/social_account$ handler/execute/login_social_account.php
+#Quiz
+RewriteRule ^quizzes/([0-9]+)/start$ views/quiz.php?id=$1
