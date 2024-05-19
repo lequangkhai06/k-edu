@@ -432,7 +432,7 @@
 
                 <div class="ml-5">
                     <div class="font-14 font-weight-bold text-secondary"><?= $users['name']; ?></div>
-                    <span class="mt-5 text-black font-12"><?= $user_email; ?></span><br>
+                    <span class="mt-5 text-black font-12"><?= $user_email != "" ? $user_email : "Chưa có email."; ?></span><br>
                     <span class="mt-5 text-black font-12"><?= UserLevel($users['level']); ?></span><br>
                     <span class="mt-5 font-12 text-danger font-weight-bold"><?= number_format($users['coins']); ?> Coins</span>
                 </div>

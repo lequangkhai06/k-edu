@@ -1,6 +1,8 @@
 <?php
 session_start();
-//error_reporting(1);
+if ($_SERVER["SERVER_NAME"] != "localhost") {
+    error_reporting(1);
+}
 mysqli_report(MYSQLI_REPORT_OFF);
 require "class/database.class.php";
 require "class/handler.class.php";
