@@ -21,8 +21,7 @@ if (!isset($users)) {
                     <div class="font-10 font-weight-bold">Mọi hành vi spam gây ảnh hưởng tới hệ thống sẽ bị khóa tài khoản vĩnh viễn.</div>
             </div>
         </div>
-
-        <h2 class="section-title text-center">Nạp tiền vào tài khoản</h2>
+        <h2 class="text-center">NẠP TIỀN VÀO TÀI KHOẢN</h2>
 
         <div class="rounded-sm shadow mt-20 py-20 px-10 px-md-30 " style="border: solid 1px #43d477">
             <div class="row mb-30">
@@ -164,12 +163,12 @@ if (!isset($users)) {
                             <small>Sau khi chuyển xong, MOMO sẽ cung cấp mã giao dịch, vui lòng điền vào thông tin trên và hoàn tất quá trình nạp tiền.</small>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-sm btn-primary mt-25 btn-block"><i data-feather="chevron-right" width="18" height="18" class="mr-5"></i> Kiểm tra mã giao dịch</button>
+                    <button type="submit" class="btn btn-sm btn-primary mt-25 btn-block"><i data-feather="chevron-right" width="18" height="18" class="mr-5"></i> KIỂM TRA MÃ GIAO DỊCH</button>
                 </form>
             </div>
         </div>
 
-        <h2 class="section-title mt-50 text-center">Lịch sử giao dịch</h2>
+        <h2 class="mt-50 text-center">- LỊCH SỬ GIAO DỊCH -</h2>
         <span class="badge bg-secondary text-white"><i class="fa-duotone fa-rotate fa-spin mr-5"></i>Cập nhật dữ liệu tự động.</span>
         <div class="rounded-sm shadow mt-20 py-20 px-10 table_data" style="border: solid 1px #43d477">
             <!-- REALTIME DATA -->
@@ -192,7 +191,7 @@ if (!isset($users)) {
         getData();
         Toastify({
             text: data.message,
-            duration: 2000,
+            duration: 3000,
             newWindow: true,
             close: false,
             gravity: "bottom",

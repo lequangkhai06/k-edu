@@ -37,7 +37,7 @@
                 <div class="col-12 col-md-12">
                     <span class="header d-block text-white font-weight-bold">KẾT NỐI</span>
                     <div class="mt-20">
-                        <a href="https://zalo.me/" target="_blank">
+                        <a href="https://zalo.me/0387290231" target="_blank">
                             <font color="#ffffff">
                                 <img src="https://i.imgur.com/xLJLNnG.png" class="mr-5" width="35" height="35"> ZALO
                             </font>
@@ -61,12 +61,12 @@
     </div>
     <div class="footer-copyright-card">
         <div class="container d-flex align-items-center justify-content-between py-15">
-            <div class="font-14 text-white">&copy; 2023 - Designed by <strong class="animate-text">Khai</strong></div>
+            <div class="font-14 text-white">&copy; 2023 - Designed by <strong class="animate-text">KhaiLE</strong></div>
 
             <div class="d-flex align-items-center justify-content-center">
                 <div class="d-flex align-items-center text-white font-14">
                     <i data-feather="phone" width="20" height="20" class="mr-5"></i>
-                    0387290xxx
+                    0387290231
                 </div>
 
                 <div class="border-left mx-5 mx-lg-15 h-100"></div>
@@ -85,7 +85,7 @@
 
     <!-- <div class="d-none" id="advertisingModalSettings">
         <div class="d-flex align-items-center justify-content-between">
-            <h3 class="section-title font-16 text-dark-blue mb-10">Sales Campaign</h3>
+            <h3 class="section-title font-16 text-dark-blue mb-10">Chiến dịch</h3>
 
             <button type="button" class="btn-close-advertising-modal close-swl btn-transparent d-flex">
                 <i data-feather="x" width="25" height="25" class=""></i>
@@ -94,18 +94,6 @@
 
         <div class="d-flex align-items-center justify-content-center">
             <img src="/store/1/default_images/ads_modal.png" class="img-fluid rounded-lg" alt="Sales Campaign">
-        </div>
-
-        <p class="font-14 text-gray mt-20">We have a sales campaign on our promoted courses and products. You can purchase 150 products at a discounted price up to 50% discount.</p>
-
-        <div class="row align-items-center mt-20">
-            <div class="col-6">
-                <a href="classes.html" class="btn btn-primary btn-sm btn-block">View Courses</a>
-            </div>
-
-            <div class="col-6">
-                <a href="products.html" class="btn btn-outline-primary btn-sm btn-block">View Products</a>
-            </div>
         </div>
     </div> -->
     </div>

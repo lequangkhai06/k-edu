@@ -7,7 +7,7 @@ if (!isset($_not_nav)) {
 include 'layouts/nav.php';
 switch ($router) {
     case 'home':
-        include 'views/home.php';
+        include 'layouts/home.php';
         break;
     case 'login':
         if (isset($_COOKIE['AUTH'])) {
@@ -37,7 +37,7 @@ switch ($router) {
         //     include 'views/forget-password.php';
         //     break;
     default:
-        include 'views/home.php';
+        include 'layouts/home.php';
         break;
 }
 if (!isset($_not_nav)) {

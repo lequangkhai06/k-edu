@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($check) {
                 echo swal("Lỗi", "Thẻ cào đã tồn tại trên hệ thống", "error", false);
             } else {
-                $partner_id = '3903539561';
-                $partner_key = 'da31aae6455d99b961980ded60749488';
+                $partner_id = '0397194561';
+                $partner_key = '5ddae5965706e24903180f9241e23af6';
                 $request_id = $_SERVER['SERVER_NAME'] . rand(100009, 999999);
                 $trans_id = rand(100009, 999999);
                 $data = array(
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $curl = curl_init();
 
                 curl_setopt_array($curl, [
-                    CURLOPT_URL => 'https://trumthe.vn/chargingws/v2?' . http_build_query($data),
+                    CURLOPT_URL => 'https://thesieure.com/chargingws/v2?' . http_build_query($data),
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => '',
                     CURLOPT_MAXREDIRS => 10,

@@ -47,10 +47,10 @@
                                             <i data-feather="bell" width="20" height="20" class="text-gray"></i>
                                         </div>
                                         <div class="ml-5">
-                                            <div class="text-secondary font-14"><span class="font-weight-bold">57</span> Notifications</div>
+                                            <div class="text-secondary font-14"><span class="font-weight-bold">57</span> Thông báo</div>
 
                                             <a href="/panel/notifications/mark-all-as-read" class="delete-action d-block mt-5 font-12 cursor-pointer text-hover-primary" data-title="Convert unread messages to read" data-confirm="Yes; Mark all as read!">
-                                                Mark all notifications as read
+                                                Đánh dấu đã đọc.
                                             </a>
                                         </div>
                                     </div>
@@ -397,12 +397,9 @@
                                             <span class="notify-at d-block mt-5">11 Aug 2021 | 13:52</span>
                                         </div>
                                     </a>
-
-
                                 </div>
-
                                 <div class="mt-10 navbar-notification-action">
-                                    <a href="/panel/notifications" class="btn btn-sm btn-danger btn-block">All notifications</a>
+                                    <a href="#" class="btn btn-sm btn-danger btn-block">Xem tất cả thông báo</a>
                                 </div>
                             </div>
                         </div>
@@ -435,9 +432,9 @@
 
                 <div class="ml-5">
                     <div class="font-14 font-weight-bold text-secondary"><?= $users['name']; ?></div>
-                    <span class="mt-5 text-gray font-12"><?= $user_email; ?></span><br>
-                    <!-- <span class="mt-5 text-gray font-12"><?= $users['mobile']; ?></span><br> -->
-                    <span class="mt-5 text-gray font-12"><?= UserLevel($users['level']); ?></span>
+                    <span class="mt-5 text-black font-12"><?= $user_email; ?></span><br>
+                    <span class="mt-5 text-black font-12"><?= UserLevel($users['level']); ?></span><br>
+                    <span class="mt-5 font-12 text-danger font-weight-bold"><?= number_format($users['coins']); ?> Coins</span>
                 </div>
             </div>
 
@@ -598,11 +595,11 @@
 
                 <?php } elseif ($users['level'] == 'member') { ?>
                     <a href="/become-instructor" class="d-none d-lg-flex btn btn-sm btn-primary nav-start-a-live-btn">
-                        Trở thành người hướng dẫn
+                        Đăng khoá học
                     </a>
 
                     <a href="/become-instructor" class="d-flex d-lg-none text-primary nav-start-a-live-btn font-14">
-                        Trở thành người hướng dẫn
+                        Đăng khoá học
                     </a>
                 <?php } elseif ($users['level'] == 'instructor') { ?>
                     <a href="/become-instructor" class="d-none d-lg-flex btn btn-sm btn-primary nav-start-a-live-btn">

@@ -603,7 +603,7 @@ function YoutubeVideoLength($videoId)
         return sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
     }
 
-    return 0;
+    return false;
 }
 
 /** Momo test request **/
@@ -628,4 +628,49 @@ function execPostRequest($url, $data)
     //close connection
     curl_close($ch);
     return $result;
+}
+
+// lấy dung lượng file
+function getFileSize($file_path, $act)
+{
+    switch ($act) {
+        case 'online':
+            $ch = curl_init($file_path);
+            curl_setopt($ch, CURLOPT_NOBODY, true);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HEADER, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            $data = curl_exec($ch);
+            if (curl_errno($ch)) {
+                curl_close($ch);
+                return false;
+            }
+            $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            if ($http_code != 200) {
+                curl_close($ch);
+                return false;
+            }
+            $file_size = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
+            curl_close($ch);
+            if ($file_size == -1) {
+                return false;
+            }
+            $file_size_mb = $file_size / 1024 / 1024;
+
+            return $file_size_mb;
+            break;
+        case 'local':
+            if (file_exists($file_path)) {
+                $file_size = filesize($file_path);
+                $file_size_mb = $file_size / 1024 / 1024;
+
+                return $file_size_mb;
+            } else {
+                return false;
+            }
+            break;
+        default:
+            # code...
+            break;
+    }
 }

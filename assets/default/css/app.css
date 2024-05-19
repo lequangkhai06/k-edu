@@ -1,3 +1,8 @@
+/*!
+ * K - EDU by @lequangkhai - https://lequangkhai.id.vn - https://facebook.com/100022194791269
+ * Copyright 2023.
+ */
+
 @charset "UTF-8";
 
 /*$custom-control-indicator-checked-color: $primary;
@@ -9,6 +14,7 @@ $custom-control-indicator-bg:$primary;*/
   font-family: 'Plus Jakarta Sans';
   font-weight: 1000;
 }
+
 
 .btn-text-primary {
   color: #43d477 !important;
@@ -2091,7 +2097,14 @@ mark,
   z-index: 2;
   color: #ffffff;
   background-color: #43d477;
-  border-color: #43d477;
+  border-color: #fff;
+}
+
+.list-group-item.wr-active {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #dc3545;
+  border-color: #fff;
 }
 
 .list-group-item+.list-group-item {
@@ -2099,6 +2112,11 @@ mark,
 }
 
 .list-group-item+.list-group-item.active {
+  margin-top: -1px;
+  border-top-width: 1px;
+}
+
+.list-group-item+.list-group-item.wr-active {
   margin-top: -1px;
   border-top-width: 1px;
 }
@@ -24018,4 +24036,24 @@ button[disabled] {
 
 .hide-element {
   display: none !important;
+}
+
+.test-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }

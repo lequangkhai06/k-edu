@@ -1,0 +1,18 @@
+Array
+(
+    [partnerCode] => MOMOBKUN20180529
+    [orderId] => 72751716117552
+    [requestId] => 1716117552
+    [amount] => 5000000
+    [orderInfo] => Thanh toán: Học Lập Trình Python Cơ Bản Đến Nâng Cao
+    [orderType] => momo_wallet
+    [transId] => 4044824213
+    [resultCode] => 0
+    [message] => Successful.
+    [payType] => napas
+    [responseTime] => 1716118052601
+    [extraData] => 
+    [signature] => 436758cc7202dcf8711d915cb016334eba41ae3505ec5620871bc077232bb7d7
+    [paymentOption] => momo
+)
+
