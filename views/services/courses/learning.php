@@ -393,7 +393,7 @@ $progress = $base->info_course($course['id'], $user_email, 'progress');
                     </div>
                     <!-- quizzes -->
 
-                    <div class="pb-20 tab-pane fade h-100 active show" id="quizzes" role="tabpanel" aria-labelledby="quizzes-tab">
+                    <div class="pb-20 tab-pane fade h-100" id="quizzes" role="tabpanel" aria-labelledby="quizzes-tab">
 
                         <div class="content-tab p-15 pb-50">
 

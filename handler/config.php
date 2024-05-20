@@ -1,5 +1,6 @@
 <?php
 session_start();
+// production
 if ($_SERVER["SERVER_NAME"] != "localhost") {
     error_reporting(1);
 }

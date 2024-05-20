@@ -36,7 +36,7 @@ if (!isset($_SESSION['csrf_token'])) {
     <meta name="msapplication-TileColor" content="#FFF">
     <meta name="msapplication-TileImage" content="ms-icon-144x144.html">
     <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-title" content="Rocket LMS">
+    <meta name="apple-mobile-web-app-title" content="LMS SYSTEM">
     <link rel="apple-touch-icon" href="https://i.imgur.com/BLxXt20.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">

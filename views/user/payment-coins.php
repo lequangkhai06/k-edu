@@ -50,10 +50,14 @@ if ($checkOrder->num_rows >= 1) {
                     'webinar_payment_method' => 'K-COINS',
                     'webinar_time' => date('d/m/Y - H:i:s', time())
                 ];
-                // Gửi email
-                $send_mail = send_mail($user_email, 'Complete Order', 0, 'course-order', $order_info);
-                if ($send_mail) {
-                    echo '<div class="alert alert-success" role="alert">Email đã được gửi tới: ' . $user_email . '</div>';
+                if ($user_email != "") {
+                    // Gửi email
+                    $send_mail = send_mail($user_email, 'Complete Order', 0, 'course-order', $order_info);
+                    if ($send_mail) {
+                        echo '<div class="alert alert-success" role="alert">Email đã được gửi tới: ' . $user_email . '</div>';
+                    } else {
+                        echo '<div class="alert alert-danger" role="alert">Có lỗi khi gửi mail tới: ' . $user_email . '</div>';
+                    }
                 }
                 // Cộng 1 người dùng tham gia khóa học
                 $conn->query("UPDATE webinars SET `user_order` = `user_order` + 1 WHERE `id` = '{$checkOrder_Data['webinar_id']}'");
