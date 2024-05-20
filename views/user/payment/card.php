@@ -230,5 +230,4 @@ if (!isset($users)) {
 </div>
 <?php
 require_once(realpath($_SERVER["DOCUMENT_ROOT"]) . '/layouts/footer.php');
-
 ?>

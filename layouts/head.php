@@ -60,6 +60,10 @@ if (!isset($_SESSION['csrf_token'])) {
     <link rel="stylesheet" href="/assets/default/css/app.css">
     <link rel="stylesheet" href="/assets/default/vendors/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/assets/default/vendors/owl-carousel2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/default/css/panel.css">
+    <link rel="stylesheet" href="/assets/default/vendors/chartjs/chart.min.css" />
+    <link rel="stylesheet" href="/assets/default/vendors/apexcharts/apexcharts.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap4.css">
     <!-- Boxicons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
     <!-- Fontawesome -->
@@ -99,4 +103,5 @@ if (!isset($_SESSION['csrf_token'])) {
 <?php
 // session_destroy();
 ?>
+
 <body>

@@ -440,7 +440,7 @@
 
             <ul class="my-8">
                 <li class="navbar-auth-user-dropdown-item">
-                    <a href="/panel" class="d-flex align-items-center w-100 px-15 py-10 text-gray font-14 bg-transparent">
+                    <a href="/user/panel" class="d-flex align-items-center w-100 px-15 py-10 text-gray font-14 bg-transparent">
                         <img src="/assets/default/img/icons/user_menu/dashboard.png" class="icons">
                         <span class="ml-5">Bảng điều khiển</span>
                     </a>

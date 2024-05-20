@@ -140,5 +140,23 @@ class KHAIDZ
         }
         return $query->fetch_array();
     }
+
+    // Lấy số lượng khoá học người dùng đã thanh toán
+    function getUserCourse($user_id, $act)
+    {
+        if ($user_id == "" || $user_id == 0) {
+            return false;
+        }
+        $query = $this->conn->query("select * from users where id = '{$user_id}'");
+        if (!$query) {
+            return false;
+        }
+        $query_orders = $this->conn->query("select * from orders where user_id = '{$user_id}' and status = 'success'");
+        $total = $query_orders->num_rows;
+        if ($act == "total") {
+            return $total;
+        }
+        return 0;
+    }
 }
 /* CONTACT: // LEQUANGKHAI  - FB.COM/KHAIDEVELOPER - ZALO.ME/0387290231 */

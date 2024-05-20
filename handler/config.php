@@ -93,6 +93,8 @@ if (isset($_COOKIE['AUTH'])) {
         $user_id = $users['id'];
         $user_email = $users['email'];
         $user_coins = $users['coins'];
+        $user_name = $users['name'];
+        $user_avatar = $users['avatar'];
         //MOMO Config
         $MOMO_Phone = '0387290231';
         $MOMO_Trans_Code = 'napmomo' . $user_id;
