@@ -157,7 +157,7 @@
         <div class="swiper-container organization-swiper-container px-12">
             <div class="swiper-wrapper py-20">
                 <?php
-                $get = $conn->query("SELECT * FROM users WHERE level = 'instructor' AND stars >= 3");
+                $get = $conn->query("SELECT * FROM users WHERE level = 'instructor' AND stars >= 3 order by stars desc");
                 if ($get->num_rows > 0) {
                     while ($row = $get->fetch_array()) {
                 ?>

@@ -459,11 +459,54 @@ $total_Review = $conn->query("SELECT * FROM webinar_reviews WHERE webinar_id = '
                                                                                                             } ?>>Đăng đánh giá</button>
                                 </form>
                                 <div>
-                                    <div id="loading" class="mt-20">
-                                        <div class="loading-icon"></div>
-                                    </div>
                                     <div class="mt-45" id="listReviews">
-                                        <!-- render -->
+                                        <?php
+                                        $review_query = $conn->query("SELECT * FROM webinar_reviews WHERE webinar_id = '{$course['id']}' AND status = 'active' order by id desc");
+                                        if ($review_query->num_rows > 0) {
+                                            while ($row = $review_query->fetch_array()) {
+                                                $reviewer = $conn->query("SELECT * FROM users WHERE id =  '{$row['user_id']}'")->fetch_array();
+                                                $reviewerAvatar = $reviewer["avatar"];
+                                                $reviewerName = $reviewer["name"];
+                                                $reviewerEmail = $reviewer["email"];
+                                                if ($row["user_type"] == "hide") {
+                                                    $reviewerAvatar = "https://i.imgur.com/h0Ajgaa.png";
+                                                    $reviewerName = "Ẩn danh";
+                                                    $reviewerEmail = "";
+                                                }
+                                        ?>
+
+                                                <!-- HIỂN THỊ BÌNH LUẬN -->
+                                                <div class="comments-card shadow-lg rounded-sm border px-20 py-15 mt-30 bg-secondary">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="user-inline-avatar d-flex align-items-center mt-10">
+                                                            <div class="avatar bg-gray200">
+                                                                <img src="<?= $reviewerAvatar; ?>" class="img-cover" alt="">
+                                                            </div>
+                                                            <div class="d-flex flex-column ml-5">
+                                                                <span class="font-weight-500 text-white"><?= $reviewerName; ?></span>
+
+                                                                <div class="stars-card d-flex align-items-center justify-content-start mt-5">
+
+                                                                    <?= StarsRating($row['rates']); ?>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="font-12 text-white mr-10 font-weight-bold"><?= time_ago($row['created_at']); ?></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mt-20 text-white font-14">
+                                                        <?= $row['description']; ?>
+                                                    </div>
+
+                                                </div>
+                                                <!-- KẾT THÚC HIỂN THỊ BÌNH LUẬN -->
+
+                                        <?php }
+                                        } ?>
                                     </div>
                                 </div>
                             </section>
@@ -822,35 +865,6 @@ $total_Review = $conn->query("SELECT * FROM webinar_reviews WHERE webinar_id = '
     // hiển thị danh sách đánh giá
     course_id = "<?php echo $course["id"]; ?>";
 
-    function load_reviews() {
-        $("#loading").show();
-        $("#listReviews").hide();
-        $.post("<?= $domain; ?>model/course/reviews.php", {
-                course_id: course_id,
-            })
-            .done(function(data) {
-                // console.log(data);
-                Toastify({
-                    text: "Đã tải xong dữ liệu!",
-                    duration: 1000,
-                    newWindow: true,
-                    close: false,
-                    gravity: "bottom", // `top` or `bottom`
-                    position: "center", // `left`, `center` or `right`
-                    stopOnFocus: true, // Prevents dismissing of toast on hover
-                    style: {
-                        background: "linear-gradient(to right, #00b09b, #96c93d)",
-                    },
-                    onClick: function() {} // Callback after click
-                }).showToast();
-                $("#loading").hide();
-                $("#listReviews").html('');
-                $('#listReviews').empty().append(data);
-                $("#listReviews").show();
-            });
-    }
-    load_reviews();
-
     // xử lý chuyển hướng thanh toán
     $('body').on('click', '#payment_submit', function() {
         $('#payment_submit').html('<i class="fa-light fa-spinner-third fa-spin mr-5"></i> Đang chuyển hướng').prop('disabled', true);
@@ -935,7 +949,6 @@ $total_Review = $conn->query("SELECT * FROM webinar_reviews WHERE webinar_id = '
                             background: "linear-gradient(to right, #00b09b, #96c93d)",
                         },
                     }).showToast();
-                    load_reviews();
                 }
             },
         });

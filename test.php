@@ -1,3 +1,3 @@
 <?php
-session_start();
-unset($_SESSION['tr-c-nghi-m-nhanh28']);
+require "./handler/config.php";
+echo $date;

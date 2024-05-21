@@ -60,11 +60,17 @@ if (!$profile) {
                 </div>
             </div>
 
-            <div class="user-actions d-flex flex-column">
-                <button type="button" id="followToggle" data-user-id="1016" class="btn btn-primary btn-sm">
-                    Contact Email
-                </button>
-
+            <div class="user-actions d-flex flex-wrap">
+                <?php if ($profile["email"] != "" && isset($users)) { ?>
+                    <button type="button" onclick="window.location.href='mailto:<?= $profile['email']; ?>'" class="btn btn-primary btn-sm m-1">
+                        Liên hệ qua email
+                    </button>
+                <?php } ?>
+                <?php if ($profile["mobile"] != 0 && isset($users)) { ?>
+                    <button type="button" onclick="window.location.href='//zalo.me/:<?= $profile['mobile']; ?>'" class="btn btn-secondary btn-sm m-1">
+                        Liên hệ qua Zalo
+                    </button>
+                <?php } ?>
             </div>
         </div>
 
@@ -75,8 +81,8 @@ if (!$profile) {
                 <div class="state-icon orange p-15 rounded-lg">
                     <img src="/assets/default/img/profile/students.svg" alt="">
                 </div>
-                <span class="font-20 text-dark-blue font-weight-bold mt-5">4</span>
-                <span class="font-14 text-gray">Students</span>
+                <span class="font-20 text-dark-blue font-weight-bold mt-5">0</span>
+                <span class="font-14 text-gray">Học sinh</span>
             </div>
 
             <div class="col-6 col-md-3 user-profile-state d-flex flex-column align-items-center">
@@ -91,8 +97,8 @@ if (!$profile) {
                 <div class="state-icon green p-15 rounded-lg">
                     <img src="/assets/default/img/profile/reviews.svg" alt="">
                 </div>
-                <span class="font-20 text-dark-blue font-weight-bold mt-5">3</span>
-                <span class="font-14 text-gray">Reviews</span>
+                <span class="font-20 text-dark-blue font-weight-bold mt-5">0</span>
+                <span class="font-14 text-gray">Đánh giá</span>
             </div>
 
 
@@ -101,7 +107,7 @@ if (!$profile) {
                     <img src="/assets/default/img/profile/appointments.svg" alt="">
                 </div>
                 <span class="font-20 text-dark-blue font-weight-bold mt-5">0</span>
-                <span class="font-14 text-gray">Meetings</span>
+                <span class="font-14 text-gray">Cuộc gặp</span>
             </div>
 
         </div>
@@ -118,34 +124,38 @@ if (!$profile) {
                 <a class="position-relative text-dark-blue font-weight-500 font-16 " id="webinars-tab" data-toggle="tab" href="#webinars" role="tab" aria-controls="webinars" aria-selected="false">Khóa học</a>
             </li>
 
-            <li class="nav-item mr-20 mr-lg-50 mt-30">
+            <!-- <li class="nav-item mr-20 mr-lg-50 mt-30">
                 <a class="position-relative text-dark-blue font-weight-500 font-16 " id="badges-tab" data-toggle="tab" href="#badges" role="tab" aria-controls="badges" aria-selected="false">Danh hiệu</a>
-            </li>
+            </li> -->
         </ul>
 
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade px-20 px-lg-50 show active" id="about" role="tabpanel" aria-labelledby="about-tab">
 
                 <div class="mt-40">
-                    <h3 class="font-16 text-dark-blue font-weight-bold">Liên hệ</h3>
+                    <h3 class="font-16 font-weight-bold">Liên hệ</h3>
 
                     <ul class="list-group-custom">
-                        <li class="mt-15 text-gray font-weight-bold">Loại tài khoản: <?= UserLevel($profile['level']); ?></li>
-                        <li class="mt-15 text-gray font-weight-bold">Địa chỉ email: <?= $profile['email']; ?></li>
-                        <li class="mt-15 text-gray font-weight-bold">Số điện thoại cá nhân: <?= $profile['mobile']; ?></li>
-                        <li class="mt-15 text-gray font-weight-bold">Địa chỉ: <?= $profile['address']; ?></li>
+                        <li class="mt-15 font-weight-bold">Loại tài khoản: <?= UserLevel($profile['level']); ?></li>
+                        <?php if ($profile["email"] != "") { ?>
+                            <li class="mt-15 font-weight-bold">Địa chỉ email: <?= $profile['email']; ?></li>
+                        <?php } ?>
+                        <?php if ($profile["mobile"] != 0) { ?>
+                            <li class="mt-15 font-weight-bold">Số điện thoại cá nhân: <?= $profile['mobile']; ?></li>
+                        <?php } ?>
+                        <li class="mt-15 font-weight-bold">Địa chỉ: <?= $profile['address']; ?></li>
                     </ul>
                 </div>
 
                 <div class="mt-40">
-                    <h3 class="font-16 text-dark-blue font-weight-bold">Giới thiệu bản thân</h3>
+                    <h3 class="font-16 text-dark-blue font-weight-bold">Giới thiệu bản thân:</h3>
 
                     <div class="mt-30">
                         <?= $profile['bio']; ?>
                     </div>
                 </div>
 
-                <div class="mt-40">
+                <!-- <div class="mt-40">
                     <h3 class="font-16 text-dark-blue font-weight-bold">Kỹ năng</h3>
 
                     <div class="d-flex flex-wrap align-items-center pt-10">
@@ -153,7 +163,7 @@ if (!$profile) {
                         <div class="bg-gray200 font-14 rounded mt-10 px-10 py-5 text-gray mr-15">Web Development</div>
                         <div class="bg-gray200 font-14 rounded mt-10 px-10 py-5 text-gray mr-15">Mobile Development</div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="tab-pane fade" id="webinars" role="tabpanel" aria-labelledby="webinars-tab">
                 <div class="mt-20 row">

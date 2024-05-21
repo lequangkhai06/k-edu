@@ -133,6 +133,8 @@ if (isset($_POST['slug'])) { ?>
 
     <?php } else {  ?>
         Phương thức không được phép.
+        <!-- js -->
+        <script src="/assets/default/vendors/feather-icons/dist/feather.min.js"></script>
     <?php } ?>
 
 <?php } ?>
