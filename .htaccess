@@ -16,6 +16,7 @@ RewriteRule ^payment/momo$ views/user/payment/momo.php
 RewriteRule ^payment/vnpay$ views/user/payment/vnpay.php
 RewriteRule ^payment/coins$ views/user/payment/coins.php
 #Danh Mục
+RewriteRule ^categories/all$ views/services/courses/listcategories.php
 RewriteRule ^categories/([a-zA-Z0-9_-]+)$ views/services/courses/categories.php?slug=$1
 RewriteRule ^course/([a-zA-Z0-9_-]+)$ views/services/courses/course.php?slug=$1
 RewriteRule ^learning/([a-zA-Z0-9_-]+)$ views/services/courses/learning.php?slug=$1
