@@ -48,7 +48,7 @@
             <p class="section-hint">Các khóa học vừa được cập nhật & giảm giá</p>
         </div>
 
-        <a href="/products" class="btn btn-border-white">Xem tất cả...</a>
+        <a href="/categories/all" class="btn btn-border-white">Xem tất cả...</a>
     </div>
 
     <div class="mt-10 position-relative">
@@ -150,7 +150,7 @@
             <p class="section-hint">Đội ngũ giáo viên tiêu biểu</p>
         </div>
 
-        <a href="/instructors" class="btn btn-border-white">Xem tất cả...</a>
+        <a href="#" class="btn btn-border-white">Xem tất cả...</a>
     </div>
 
     <div class="position-relative mt-20">
