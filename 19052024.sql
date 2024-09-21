@@ -632,7 +632,7 @@ CREATE TABLE `users` (
   `google_id` varchar(255) DEFAULT NULL,
   `facebook_id` varchar(255) DEFAULT NULL,
   `zalo_id` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `avatar` varchar(9999) DEFAULT 'https://i.imgur.com/b0VF3PJ.png',
+  `avatar` varchar(999) DEFAULT 'https://i.imgur.com/b0VF3PJ.png',
   `border` varchar(999) NOT NULL DEFAULT 'https://i.imgur.com/0aDdQyR.png',
   `coins` int NOT NULL DEFAULT '0',
   `accumulation` int NOT NULL DEFAULT '0',
@@ -642,8 +642,8 @@ CREATE TABLE `users` (
   `address` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_vietnamese_ci NOT NULL,
   `stars` int NOT NULL DEFAULT '0',
   `verified` tinyint(1) NOT NULL DEFAULT '0',
-  `token` varchar(50) DEFAULT NULL,
-  `ip_addr` varchar(30) DEFAULT NULL,
+  `token` varchar(99) DEFAULT NULL,
+  `ip_addr` varchar(99) DEFAULT NULL,
   `registration_type` enum('local','google','facebook','zalo') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'local'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
