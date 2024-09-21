@@ -68,6 +68,8 @@
                                         <a href="/course/<?= $row['slug']; ?>" class="image-box__a">
                                             <?php if ($row['discount'] != 0) { ?>
                                                 <span class="badge badge-danger">Giảm <?= $row['discount']; ?>%</span>
+                                            <?php } elseif ($row["discount"] == 0 && $row["price"] > 0) { ?>
+                                                <span class="badge badge-danger">Bán chạy</span>
                                             <?php } elseif ($row['discount'] == 0 && $row['price'] == 0) { ?>
                                                 <span class="badge badge-primary">Miễn phí</span>
                                             <?php } ?>
