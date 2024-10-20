@@ -112,34 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             exit('<script>location.href="/home"</script>');
         }
-
-
-        /** 
-         * Download file
-         **/
-
-        // echo '<div class="d-flex align-items-center justify-content-between rounded-sm mt-15 p-15 border-dashed-gray300">
-        //         <span class="font-weight-bold text-dark">Download the file</span>
-        //         <a href="https://lms2.rocket-soft.org/course/Learn-Python-Programming/file/35/download" class="btn btn-primary btn-sm" target="_blank">Download</a>
-        //     </div>';
-
-        // echo '<div class="shadow-sm rounded-lg bg-white px-15 px-md-25 py-20 mt-20">
-        //     <h3 class=" font-16 font-weight-bold text-dark-blue">Attachments</h3>
-
-        //     <div class="row mt-10">
-        //     <div class="col-12 col-lg-3 mt-10 mt-lg-0">
-        //             <a href="https://lms2.rocket-soft.org/course/Learn-Python-Programming/file/35/download" class="d-flex align-items-center p-10 border border-gray200 rounded-sm">
-        //                 <span class="chapter-icon bg-gray300 mr-10">
-        //                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud text-gray"><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path></svg>
-        //                 </span>
-
-        //                 <div class="">
-        //                     <span class="font-weight-500 font-14 text-dark-blue d-block">Introduction video</span>
-        //                     <span class="font-12 text-gray d-block">mp4 | 7.09 MB</span>
-        //                 </div>
-        //             </a>
-        //         </div></div>
-        //     </div>';
     }
 
 
